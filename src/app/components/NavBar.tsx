@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import LogoIcon from "./icons/logo";
+import LogoIcon from "./icons/Logo";
 
 const NavBar = () => {
   const pathname = usePathname();

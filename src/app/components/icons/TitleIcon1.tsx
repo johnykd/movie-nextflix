@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 
-const TitleLogo4 = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
+const TitleIcon1 = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
   () => {
     return (
       <svg
@@ -36,6 +36,6 @@ const TitleLogo4 = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
   }
 );
 
-TitleLogo4.displayName = "TitleLogo4";
+TitleIcon1.displayName = "TitleIcon1";
 
-export default TitleLogo4;
+export default TitleIcon1;
