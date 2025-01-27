@@ -18,9 +18,9 @@ const Button = ({ icon, text, type }: ButtonProps) => {
         backgroundColor: type === "primary" ? "white" : "rgba(81, 84, 81, 1)",
       }}
     >
-      {icon}
+      <div className="h-[30px] w-[30px] content-center">{icon}</div>
       <p
-        className={`text-[30px] ml-3 ${
+        className={`text-[18px] ml-3 ${
           type === "primary" ? "text-black" : "text-white"
         }`}
       >

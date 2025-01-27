@@ -35,9 +35,13 @@ const MovieItem = () => {
   return (
     <div
       className="bg-cover bg-center w-full h-screen flex flex-col"
-      style={{ backgroundImage: `url(${movie?.imageUrl})` }}
+      style={{
+        backgroundImage: `url(${movie?.imageUrl})`,
+        // backgroundSize: "calc(100vw) calc(100vh)",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      <div className="ml-12 mt-40 text-white max-w-[700px]">
+      <div className="ml-12 mt-40 text-white max-w-[700px] hidden md:block">
         <NSeries />
         {movie?.titleIcon}
         <div className="flex items-center mt-10 text-2xl ">
@@ -46,7 +50,11 @@ const MovieItem = () => {
         </div>
         <p className="my-4 text-[30px]">{movie?.description}</p>
         <div className="flex space-x-4">
-          <Button icon={<Polygon />} text="Play" type="primary" />
+          <Button
+            icon={<Polygon width={24} height={24} />}
+            text="Play"
+            type="primary"
+          />
           <Button icon={<InfoIcon />} text="More Info" />
         </div>
       </div>
