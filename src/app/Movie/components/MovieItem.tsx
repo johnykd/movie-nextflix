@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import TopTenIcon from "../../components/icons/TopTen";
 import NSeries from "../../components/icons/NSeries";
 import Button from "@/app/components/Button";
@@ -11,8 +12,9 @@ import { SEARCH_MOVIES } from "@/app/graphQl/movie";
 import TitleIcon1 from "@/app/components/icons/TitleIcon1";
 
 const MovieItem = () => {
+  const { t } = useTranslation();
   const { data, loading, error } = useQuery(SEARCH_MOVIES, {
-    variables: { query: "the son" },
+    variables: { query: "the sons" }, // Example query, just to get data
   });
 
   if (loading)
@@ -21,7 +23,7 @@ const MovieItem = () => {
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white"></div>
       </div>
     );
-  if (error) return <div>Error</div>;
+  if (error) return <div>{t("error")}</div>;
   const movieList = data.items;
   const movie = {
     id: 1,
@@ -46,16 +48,16 @@ const MovieItem = () => {
         {movie?.titleIcon}
         <div className="flex items-center mt-10 text-2xl ">
           <TopTenIcon />
-          <h1 className="ml-4">#1 in TV Shows Today</h1>
+          <h1 className="ml-4">{t("topTenInTVShowsToday")}</h1>
         </div>
-        <p className="my-4 text-[30px]">{movie?.description}</p>
+        <p className="my-4 text-[24px]">{movie?.description}</p>
         <div className="flex space-x-4">
           <Button
             icon={<Polygon width={24} height={24} />}
-            text="Play"
+            text={t("play")}
             type="primary"
           />
-          <Button icon={<InfoIcon />} text="More Info" />
+          <Button icon={<InfoIcon />} text={t("moreInfo")} />
         </div>
       </div>
 
