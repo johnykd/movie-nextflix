@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background-default text-text-primary;
+    font-family: theme("fontFamily.primary");
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+
+  p {
+    @apply text-base;
+  }
+}
+
+@layer components {
+  .title-large {
+    @apply text-3xl font-bold;
+  }
+
+  .title-medium {
+    @apply text-2xl font-medium;
+  }
+
+  .title-small {
+    @apply text-xl font-medium;
+  }
+
+  .body-large {
+    @apply text-lg;
+  }
+
+  .body-medium {
+    @apply text-base;
+  }
+
+  .body-small {
+    @apply text-sm;
+  }
+}
