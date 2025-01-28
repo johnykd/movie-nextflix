@@ -5,6 +5,17 @@ export const SEARCH_MOVIES = gql`
     items: searchMovies(query: $query) {
       id
       title
+      year
+      imageUrl
+    }
+  }
+`;
+
+export const FIND_MOVIE_BY_ID = gql`
+  query findMovieById($id: String!) {
+    items: findMovieById(id: $id) {
+      id
+      title
       description
       imageUrl
     }

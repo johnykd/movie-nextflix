@@ -12,6 +12,7 @@ import { SEARCH_MOVIES } from "@/app/graphQl/movie";
 import TitleIcon1 from "@/app/icons/TitleIcon1";
 import { IMovie } from "@/app/type/movie";
 import { useRouter } from "next/navigation";
+import Loading from "@/app/components/Loading";
 
 const MovieItem = () => {
   const router = useRouter();
@@ -23,12 +24,7 @@ const MovieItem = () => {
     }
   );
 
-  if (loading)
-    return (
-      <div className="flex justify-center items-center h-screen mr-20">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white"></div>
-      </div>
-    );
+  if (loading) return <Loading />;
   if (error) return <div>{t("error")}</div>;
 
   const movieList: IMovie[] = data?.items || [];
