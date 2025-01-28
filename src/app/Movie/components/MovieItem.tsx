@@ -10,12 +10,16 @@ import PopularMovieList from "./PopularMovieList";
 import { useQuery } from "@apollo/client";
 import { SEARCH_MOVIES } from "@/app/graphQl/movie";
 import TitleIcon1 from "@/app/icons/TitleIcon1";
+import { IMovie } from "@/app/type/movie";
 
 const MovieItem = () => {
   const { t } = useTranslation();
-  const { data, loading, error } = useQuery(SEARCH_MOVIES, {
-    variables: { query: "the sons" }, // Example query, just to get data
-  });
+  const { data, loading, error } = useQuery<{ items: IMovie[] }>(
+    SEARCH_MOVIES,
+    {
+      variables: { query: "the sons" },
+    }
+  );
 
   if (loading)
     return (
@@ -24,33 +28,33 @@ const MovieItem = () => {
       </div>
     );
   if (error) return <div>{t("error")}</div>;
-  const movieList = data.items;
-  const movie = {
+
+  const movieList: IMovie[] = data?.items || [];
+
+  const movie: IMovie = {
     id: 1,
     title: "Devil in Ohio",
     description:
       "Determined to protect a young patient who escaped a mysterious cult, a psychiatrist takes the girl in, putting her own family — and life — in danger",
     imageUrl: "/images/movie1.png",
-    titleIcon: <TitleIcon1 />,
   };
 
   return (
     <div
       className="bg-cover bg-center w-full h-screen flex flex-col"
       style={{
-        backgroundImage: `url(${movie?.imageUrl})`,
-        // backgroundSize: "calc(100vw) calc(100vh)",
+        backgroundImage: `url(${movie.imageUrl})`,
         backgroundRepeat: "no-repeat",
       }}
     >
       <div className="ml-12 mt-40 text-white max-w-[700px] hidden md:block">
         <NSeries />
-        {movie?.titleIcon}
+        <TitleIcon1 />
         <div className="flex items-center mt-10 text-2xl ">
           <TopTenIcon />
           <h1 className="ml-4">{t("topTenInTVShowsToday")}</h1>
         </div>
-        <p className="my-4 text-[24px]">{movie?.description}</p>
+        <p className="my-4 text-[24px]">{movie.description}</p>
         <div className="flex space-x-4">
           <Button
             icon={<Polygon width={24} height={24} />}

@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
+import N from "../icons/N";
+import LogoIcon from "../icons/Logo";
+import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import LogoIcon from "../icons/Logo";
-import N from "../icons/N";
-import LanguageSwitcher from "./LanguageSwitcher";
 
 const NavBar = () => {
   const pathname = usePathname();

@@ -12,6 +12,7 @@ i18n
         translation: {
           en: "EN",
           topTenInTVShowsToday: "#1 in TV Shows Today",
+          popOnNetflix: "Popular on Netflix",
           play: "Play",
           moreInfo: "More Info",
           loading: "Loading...",
@@ -30,6 +31,7 @@ i18n
         translation: {
           th: "TH",
           topTenInTVShowsToday: "#1 ในรายการทีวีวันนี้",
+          popOnNetflix: "ยอดนิยมบน Netflix",
           play: "เล่น",
           moreInfo: "ข้อมูลเพิ่มเติม",
           loading: "กำลังโหลด...",
