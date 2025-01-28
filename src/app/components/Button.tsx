@@ -4,11 +4,13 @@ interface ButtonProps {
   icon?: React.ReactNode;
   text: string;
   type?: string;
+  onClick?: () => void;
 }
 
-const Button = ({ icon, text, type }: ButtonProps) => {
+const Button = ({ icon, text, type, onClick }: ButtonProps) => {
   return (
     <div
+      onClick={onClick}
       style={{
         borderRadius: "5px",
         padding: "4px 12px",

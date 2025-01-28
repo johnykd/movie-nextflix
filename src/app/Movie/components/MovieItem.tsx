@@ -11,8 +11,10 @@ import { useQuery } from "@apollo/client";
 import { SEARCH_MOVIES } from "@/app/graphQl/movie";
 import TitleIcon1 from "@/app/icons/TitleIcon1";
 import { IMovie } from "@/app/type/movie";
+import { useRouter } from "next/navigation";
 
 const MovieItem = () => {
+  const router = useRouter();
   const { t } = useTranslation();
   const { data, loading, error } = useQuery<{ items: IMovie[] }>(
     SEARCH_MOVIES,
@@ -60,6 +62,7 @@ const MovieItem = () => {
             icon={<Polygon width={24} height={24} />}
             text={t("play")}
             type="primary"
+            onClick={() => router.push(`/movie/${movie.id}/detail`)}
           />
           <Button
             icon={<InfoIcon width={24} height={24} />}

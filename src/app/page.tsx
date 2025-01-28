@@ -1,5 +1,5 @@
 import React from "react";
-import MovieItem from "./Movie/components/MovieItem";
+import MovieItem from "./movie/components/MovieItem";
 
 const HomePage = () => {
   return (
