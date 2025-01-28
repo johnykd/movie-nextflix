@@ -1,6 +1,6 @@
 import Button from "@/app/components/Button";
-import InfoIcon from "@/app/components/icons/Info";
-import Polygon from "@/app/components/icons/Polygon";
+import InfoIcon from "@/app/icons/Info";
+import Polygon from "@/app/icons/Polygon";
 import React from "react";
 
 const MobileMenuAction = () => {

@@ -1,14 +1,19 @@
 import React, { forwardRef } from "react";
-
-const InfoIcon = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
-  () => {
+interface Props extends React.SVGProps<SVGSVGElement> {
+  width?: number;
+  height?: number;
+}
+const InfoIcon = forwardRef<SVGSVGElement, Props>(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ({ width = 37, height = 41, ...props }, _ref) => {
     return (
       <svg
-        width="40"
-        height="40"
+        width={width}
+        height={height}
         viewBox="0 0 40 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        {...props}
       >
         <path
           d="M38 20.5263C38 30.1268 29.9917 38 20 38C10.0083 38 2 30.1268 2 20.5263C2 10.9258 10.0083 3.05261 20 3.05261C29.9917 3.05261 38 10.9258 38 20.5263Z"

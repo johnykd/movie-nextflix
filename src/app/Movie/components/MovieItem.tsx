@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import TopTenIcon from "../../components/icons/TopTen";
-import NSeries from "../../components/icons/NSeries";
+import TopTenIcon from "../../icons/TopTen";
+import NSeries from "../../icons/NSeries";
 import Button from "@/app/components/Button";
-import Polygon from "@/app/components/icons/Polygon";
-import InfoIcon from "@/app/components/icons/Info";
+import Polygon from "@/app/icons/Polygon";
+import InfoIcon from "@/app/icons/Info";
 import PopularMovieList from "./PopularMovieList";
 import { useQuery } from "@apollo/client";
 import { SEARCH_MOVIES } from "@/app/graphQl/movie";
-import TitleIcon1 from "@/app/components/icons/TitleIcon1";
+import TitleIcon1 from "@/app/icons/TitleIcon1";
 
 const MovieItem = () => {
   const { t } = useTranslation();
@@ -57,11 +57,14 @@ const MovieItem = () => {
             text={t("play")}
             type="primary"
           />
-          <Button icon={<InfoIcon />} text={t("moreInfo")} />
+          <Button
+            icon={<InfoIcon width={24} height={24} />}
+            text={t("moreInfo")}
+          />
         </div>
       </div>
 
-      {/* // This is the MovieList component at footer */}
+      {/* // MovieList scrollable */}
       <div className="mt-auto ml-12 text-[white] bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-[rgba(20,20,20,0)]">
         <PopularMovieList itemList={movieList} />
       </div>
